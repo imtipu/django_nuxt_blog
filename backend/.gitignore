@@ -1,0 +1,14 @@
+*.pyc
+tmp
+tmp/
+env/
+.terraform
+.env
+staticfiles/
+db.sqlite3
+db.sqlite
+local_settings.py
+media
+media/
+seeders.py
+*seeaders.py
