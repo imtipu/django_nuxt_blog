@@ -1,0 +1,20 @@
+{% load static %}
+
+<!-- navbar-->
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light py-4 index-forward bg-white">
+        <div class="container d-flex justify-content-center justify-content-lg-between align-items-center">
+            <ul class="list-inline small mb-0 text-dark d-none d-lg-block">
+                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+            <a class="navbar-brand" href="{% url 'blog_home' %}"><img src="{% static 'img/logo.svg' %}" alt="..." width="150"></a><a
+                class="reset-anchor text-small mb-0 h6 d-none d-lg-block" href="mailto:me@imtipu.me"><i
+                class="far fa-envelope mr-2 text-primary"></i>me@imtipu.me</a>
+        </div>
+    </nav>
+    {% include 'blog/snippets/navbar_links.html' %}
+</header>

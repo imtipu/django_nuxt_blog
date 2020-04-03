@@ -1,0 +1,52 @@
+{% load blog_tags %}
+{% post_categories as categories %}
+<nav class="navbar navbar-expand-lg navbar-light border-top border-bottom border-light">
+    <div class="container">
+        <ul class="list-inline small mb-0 text-dark d-block d-lg-none">
+
+            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'blog_home' %}">Home</a>
+                </li>
+                {% for cat in categories %}
+                    {% url 'category_post' cat.slug as cat_url %}
+                    <li class="nav-item {% if cat.subcategory_parent.count > 0 %}dropdown{% endif %}">
+                        <a class="nav-link {% if cat_url == request.path %}active{% endif %}
+{% if cat.subcategory_parent.count > 0 %}dropdown-toggle{% endif %}"
+                                {% if cat.subcategory_parent.count > 0 %}
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false"
+                           id="{{ cat.slug }}"
+                                {% endif %}
+
+                           href="{% url 'category_post' cat.slug %}"
+
+
+                        >{{ cat.name }}</a>
+                        {% if cat.subcategory_parent.count > 0 %}
+                            <div class="dropdown-menu mt-2" aria-labelledby="{{ cat.slug }}">
+                                {% for sub_cat in cat.subcategory_parent.all %}
+                                    {% url 'sub_category_post' cat.slug sub_cat.slug as subcat_url %}
+                                    <a class="dropdown-item {% if subcat_url == request.path %}active{% endif %}" href="{% url 'sub_category_post' cat.slug sub_cat.slug  %}">{{ sub_cat.name }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                    </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

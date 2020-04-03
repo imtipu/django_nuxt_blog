@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block content %}
+    {% url 'category_post' 'tech' as current_path %}
+    {{ request.get_full_path  }}
+    {% if current_path == request.get_full_path %}
+        ok
+    {% endif %}
+{% endblock %}

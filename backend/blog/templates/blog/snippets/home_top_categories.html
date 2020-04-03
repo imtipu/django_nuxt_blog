@@ -1,0 +1,30 @@
+{% load static %}
+<!-- Top categories-->
+    <section class="pb-5">
+      <div class="container pb-4">
+        <div class="row mb-5 pb-4">
+          <div class="col-lg-4 mb-4 mb-lg-0"><a class="category-block bg-center bg-cover" style="background: url({% static 'img/category-bg-1.jpg' %})" href="#"><span class="category-block-title">Interior Design</span></a></div>
+          <div class="col-lg-4 mb-4 mb-lg-0"><a class="category-block bg-center bg-cover" style="background: url({% static 'img/category-bg-2.jpg' %})" href="#"><span class="category-block-title">Fashion</span></a></div>
+          <div class="col-lg-4"><a class="category-block bg-center bg-cover" style="background: url({% static 'img/category-bg-3.jpg' %})" href="#"><span class="category-block-title">Tips &amp; Tricks</span></a></div>
+        </div>
+        <!-- Newsletter-->
+        <div class="p-4 bg-light">
+          <div class="row align-items-center p-lg-3">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <h2 class="h3 mb-1">Subscribe to my newsletter</h2>
+              <p class="mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="col-lg-6">
+              <form action="#">
+                <div class="input-group">
+                  <input class="form-control" type="search" placeholder="Enter your email address" aria-label="email address" aria-describedby="button-addon2">
+                  <div class="input-group-append ml-2">
+                    <button class="btn btn-primary" id="button-addon2" type="submit">Subscribe</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

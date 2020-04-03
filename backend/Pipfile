@@ -12,6 +12,12 @@ markdown = "*"
 django-filter = "==2.2.0"
 django-guardian = "*"
 coreapi = "*"
+daphne = "*"
+django-autoslug = "*"
+django-imagekit = "*"
+pillow = "*"
+django-cleanup = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.7"
