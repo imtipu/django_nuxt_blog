@@ -1,0 +1,112 @@
+{% load static %}
+{% load blog_tags %}
+<!-- Home listing-->
+<section class="pb-5">
+    <div class="container pb-4">
+        <div class="row">
+            <div class="col-lg-9 mb-5 mb-lg-0">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6"><a class="d-block post-trending mb-4" href="#"><img class="img-fluid w-100"
+                                                                                              src="{% static 'img/post-img-1.jpg' %}"
+                                                                                              alt=""/></a>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="list-inline">
+                            <li class="list-inline-item mr-2"><a class="category-link font-weight-normal" href="#">Fashion</a>
+                            </li>
+                            <li class="list-inline-item mx-2"><a class="text-uppercase meta-link font-weight-normal"
+                                                                 href="#">John Smith</a></li>
+                            <li class="list-inline-item mx-2"><a class="text-uppercase meta-link font-weight-normal"
+                                                                 href="#">15 Sep 2020</a></li>
+                        </ul>
+                        <h2 class="h3 mb-4"><a class="d-block reset-anchor" href="#">Summer of Love: The History of San
+                            Francisco</a></h2>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p><a
+                            class="btn btn-link p-0 read-more-btn" href="#"><span>Read more</span><i
+                            class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <blockquote class="blockquote bg-dark text-white p-4 p-lg-5 text-center mb-5">
+                    <p class="h4 mb-4">Design is the fundamental soul of a human-made creation that ends up expressing
+                        itself in successive outer layers of the product or service.</p>
+                    <footer class="blockquote-footer">
+                        <cite class="text-white" title="Source Title">Steve Jobs</cite>
+                    </footer>
+                </blockquote>
+                <!-- Pagination-->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Blog sidebar-->
+            <div class="col-lg-3">
+                <!-- About category-->
+                <div class="card rounded-0 border-0 bg-light mb-4 py-lg-4">
+                    <div class="card-body text-center">
+                        <h2 class="h3 mb-3">About me</h2><img class="rounded-circle mb-3"
+                                                              src="{% static 'img/author.jpg' %}" alt="..." width="100">
+                        <p class="text-small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt.</p>
+                        <ul class="list-inline small mb-0 text-dark">
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i
+                                    class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% include 'blog/snippets/sidebar_recent_posts.html' %}
+                <!-- Categories-->
+                <div class="card rounded-0 border-0 mb-4">
+                    <div class="card-body p-0">
+                        <h2 class="h5 mb-3">Trending categories</h2><a
+                            class="category-block category-block-sm bg-center bg-cover mb-2"
+                            style="background: url({% static 'img/category-bg-1.jpg' %})" href="#"><span
+                            class="category-block-title">Interior Design</span></a><a
+                            class="category-block category-block-sm bg-center bg-cover mb-2"
+                            style="background: url({% static 'img/category-bg-2.jpg' %})" href="#"><span
+                            class="category-block-title">Fashion</span></a><a
+                            class="category-block category-block-sm bg-center bg-cover mb-2"
+                            style="background: url({% static 'img/category-bg-3.jpg' %})" href="#"><span
+                            class="category-block-title">Tips &amp; Tricks</span></a>
+                    </div>
+                </div>
+                <!-- Tags-->
+                <div class="card rounded-0 border-0 mb-4">
+                    <div class="card-body p-0">
+                        <h2 class="h5 mb-3">Tags cloud</h2>
+                        <ul class="list-inline">
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Art</a></li>
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Events</a></li>
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Make up</a></li>
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Design</a></li>
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Fashion</a></li>
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Inspiration</a>
+                            </li>
+                            <li class="list-inline-item my-1 mr-2"><a class="sidebar-tag-link" href="#">Business</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Ad-->
+                <div class="card rounded-0 border-0 mb-4">
+                    <div class="card-body p-0"><a class="d-block" href="#"><img class="img-fluid"
+                                                                                src="{% static 'img/banner.jpg' %}"
+                                                                                alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
