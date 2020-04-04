@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+
       <h1 class="title">
         django_nuxt_blog
       </h1>
@@ -29,11 +29,10 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 
 export default {
+  layout: 'default',
   components: {
-    Logo
   }
 }
 </script>

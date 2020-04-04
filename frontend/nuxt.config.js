@@ -4,6 +4,11 @@ export default {
   /*
   ** Headers of the page
   */
+  env: {
+    NODE_ENV: process.env.NODE_ENV || 'development',
+    API_URL: process.env.API_URL || '',
+  },
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -23,6 +28,9 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/static/vendor/bootstrap/css/bootstrap.min.css',
+    '@/static/css/style.sea.css',
+    '@/static/vendor/lightbox2/css/lightbox.css',
   ],
   /*
   ** Plugins to load before mounting the App

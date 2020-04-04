@@ -36,21 +36,25 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+]
+THIRD_PARTY_APPS = [
+    'corsheaders',
+    'rest_framework',
     'imagekit',
     'django_cleanup.apps.CleanupConfig',
     'debug_toolbar',
 ]
-
 MY_APPS = [
     'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
 ]
 
-INSTALLED_APPS += MY_APPS
+INSTALLED_APPS += MY_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -62,7 +66,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_nuxt_blog.urls'
 SITE_ID = 1
-
+CORS_ORIGIN_ALLOW_ALL = True
 if DEBUG:
     INTERNAL_IPS = [
         # ...
@@ -118,6 +122,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        # 'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAdminUser',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'users.authentications.InactiveUserAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+
+        # 'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+        # 'rest_framework_social_oauth2.authentication.SocialAuthentication',
+    ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 12,
+}
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
